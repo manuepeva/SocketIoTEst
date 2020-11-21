@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import styled from '@emotion/styled';
+import { monedas } from '../__mocks__/cryptomonedas';
 
 
 const Label = styled.label`
@@ -36,6 +37,7 @@ const useMoneda = (label, stateInicial, MONEDAS) => {
             <Select
                 onChange={e => actualizarState(e.target.value)}
                 value={state}
+                data-testid="selectMonedas"
             >
                 <option value="MXN">--Seleccione--</option>
                 {MONEDAS.map(moneda => (
